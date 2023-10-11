@@ -2,10 +2,18 @@ class LinkedList
 {
 constructor(head = null){
     this.head = head
+    this.tail = null
 }
 append(value){
     let node = new Node(value)
+    if (this.head == null)
+    {
     return this.head = node;
+    }
+    else
+    {
+    return this.tail = node
+    }
 }
 
 }
