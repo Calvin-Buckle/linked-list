@@ -77,6 +77,13 @@ at(index){
     return tmp;
 }
 
+
+pop(){
+    let tmp = this.head;
+    tmp = tmp.nextNode
+    if (tmp.nextNode != null){ return tmp.nextNode = null}
+}
+
 }
 
 
@@ -85,7 +92,7 @@ list.prepend(10)
 list.append(20)
 list.append(30)
 
-
+list.pop()
 console.log(list)
 console.log(list.at(0))
 console.log(list.size())
