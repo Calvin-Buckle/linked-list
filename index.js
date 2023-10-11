@@ -47,15 +47,24 @@ prepend(value)
 size(){
     let tmp = this.head
     let counter = 0
-    while (tmp != null){
+    while (tmp != null)
+    {
         counter++;
         tmp = tmp.nextNode;
     }
     return counter;
 }
 
-head(){
+header()
+{
     return this.head
+}
+
+tails()
+{
+    let tmp = this.head;
+    while (tmp.nextNode != null) tmp = tmp.nextNode;
+    return tmp;
 }
 
 
@@ -71,4 +80,5 @@ list.append(30)
 console.log(list)
 
 console.log(list.size())
-console.log("head",list.head)
+console.log("head",list.header())
+console.log("tail",list.tails())
