@@ -15,7 +15,7 @@ constructor(head = null)
     this.head = head
     
     
-    this.size = 0
+   
 }
 
 append(value)
@@ -44,16 +44,27 @@ prepend(value)
 }
 
 
+size(){
+    let tmp = this.head
+    let counter = 0
+    while (tmp != null){
+        counter++;
+        tmp = tmp.nextNode;
+    }
+    return counter;
+}
+
 
 
 }
 
 
-let thing = new LinkedList;;
-thing.prepend(10)
-thing.append(20)
-thing.append(30)
+let list = new LinkedList;;
+list.prepend(10)
+list.append(20)
+list.append(30)
 
 
-console.log(thing)
+console.log(list)
 
+console.log(list.size())
