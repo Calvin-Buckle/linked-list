@@ -84,17 +84,23 @@ pop(){
     if (tmp.nextNode != null){ return tmp.nextNode = null}
 }
 
-}
+contains(value)
+ {
+    let tmp = this.head;
+    while(tmp != null){
+        if( tmp.value == value)return true
+        tmp = tmp.nextNode 
+    }
+    return false
 
+
+
+}
+}
 
 let list = new LinkedList;;
 list.prepend(10)
 list.append(20)
 list.append(30)
 
-list.pop()
-console.log(list)
-console.log(list.at(0))
-console.log(list.size())
-console.log("head",list.header())
-console.log("tail",list.tails())
+console.log(list.contains(10))
