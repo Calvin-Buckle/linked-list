@@ -67,6 +67,15 @@ tails()
     return tmp;
 }
 
+at(index){
+    let tmp = this.head;
+    let i;
+    for(i = 0; i < index ; i++){
+       tmp = tmp.nextNode;
+       if (tmp == null){return 'there is no node for this index'}
+    }
+    return tmp;
+}
 
 }
 
@@ -78,7 +87,7 @@ list.append(30)
 
 
 console.log(list)
-
+console.log(list.at(0))
 console.log(list.size())
 console.log("head",list.header())
 console.log("tail",list.tails())
