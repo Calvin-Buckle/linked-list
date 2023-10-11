@@ -54,6 +54,9 @@ size(){
     return counter;
 }
 
+head(){
+    return this.head
+}
 
 
 }
@@ -68,3 +71,4 @@ list.append(30)
 console.log(list)
 
 console.log(list.size())
+console.log("head",list.head)
