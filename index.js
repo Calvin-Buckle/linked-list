@@ -115,13 +115,31 @@ toString() {
     return (stringList += "null");
   }
 
+
+  insertAt(value, index) {
+    if (this.head == null) this.prepend(value);
+    else {
+      let cur = this.head;
+      let prev = null;
+      for (let i = 0; i < index; i++) {
+        prev = cur;
+        cur = cur.nextNode;
+        if (cur == null) break;
+      }
+      const tmp = new Node(value);
+      prev.nextNode = tmp;
+      tmp.nextNode = cur;
+    }
+  }
+
+
 }
 
 let list = new LinkedList;;
 list.prepend(10)
 list.append(20)
 list.append(30)
-console.log(list.find(50))
 
-console.log(list.contains(10))
+list.insertAt(23, 1);
 console.log(list.toString())
+
