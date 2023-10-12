@@ -101,12 +101,19 @@ find(value){
     index++
     if( tmp.value == value)return index;
     tmp = tmp.nextNode
-    if (tmp.value != value) return null
-    
-    
+    if (tmp.value != value) return null 
  }
-   
 }
+
+toString() {
+    let tmp = this.head;
+    let stringList = "";
+    while (tmp != null) {
+      stringList += `(${tmp.value}) -> `;
+      tmp = tmp.nextNode;
+    }
+    return (stringList += "null");
+  }
 
 }
 
@@ -115,4 +122,6 @@ list.prepend(10)
 list.append(20)
 list.append(30)
 console.log(list.find(50))
+
 console.log(list.contains(10))
+console.log(list.toString())
