@@ -69,8 +69,8 @@ tails()
 
 at(index){
     let tmp = this.head;
-    let i;
-    for(i = 0; i < index ; i++){
+  
+    for(let i = 0; i < index ; i++){
        tmp = tmp.nextNode;
        if (tmp == null){return 'there is no node for this index'}
     }
@@ -132,8 +132,23 @@ toString() {
     }
   }
 
+  removeAt(index) {
+    if (this.head == null) return;
+    let cur = this.head;
+    let prev = null;
 
+
+    for (let i = 0; i < index; i++) {
+      prev = cur;
+      cur = cur.nextNode;
+      if (cur == null) return ;
+    }
+    prev.nextNode = cur.nextNode;
+  }
 }
+
+
+
 
 let list = new LinkedList;;
 list.prepend(10)
@@ -141,5 +156,6 @@ list.append(20)
 list.append(30)
 
 list.insertAt(23, 1);
+list.removeAt(1)
 console.log(list.toString())
 
