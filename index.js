@@ -92,15 +92,27 @@ contains(value)
         tmp = tmp.nextNode 
     }
     return false
-
-
-
 }
+
+find(value){
+ let tmp = this.head;
+ let index = -1;
+ while( tmp != null){
+    index++
+    if( tmp.value == value)return index;
+    tmp = tmp.nextNode
+    if (tmp.value != value) return null
+    
+    
+ }
+   
+}
+
 }
 
 let list = new LinkedList;;
 list.prepend(10)
 list.append(20)
 list.append(30)
-
+console.log(list.find(50))
 console.log(list.contains(10))
